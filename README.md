@@ -1,0 +1,1 @@
+# Resoluci-nParcial2
