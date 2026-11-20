@@ -5,7 +5,9 @@ public class CuentaConComision extends Cuenta {
 
     @Override
     public void retirar(double monto) throws SaldoInsuficienteException {
-        super.retirar(monto);
-        super.retirar(5);
+        if (!Double.isFinite(monto) || monto <= 0 || monto + 5 > getSaldo()) {
+            throw new SaldoInsuficienteException();
+        }
+        super.retirar(monto + 5);
     }
 }
